@@ -1,8 +1,14 @@
 {
   "name": "@amyflow/amy-hypernova",
   "version": "1.0.0",
+  "private": true,
   "description": "",
   "main": "index.js",
+  "workspaces": [
+    "apps/**",
+    "libs/**",
+    "tools/**"
+  ],
   "engines": {
     "node": "16",
     "npm": "please-use-yarn"
