@@ -1,0 +1,15 @@
+{
+  "name": "@amyflow/ui-hooks",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup src/index.ts --clean --sourcemap --format esm"
+  },
+  "dependencies": {
+    "@mantine/hooks": "^4.2.12"
+  },
+  "devDependencies": {
+    "tsup": "^6.1.3"
+  }
+}
