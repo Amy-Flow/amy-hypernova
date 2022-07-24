@@ -1,0 +1,21 @@
+{
+  "name": "@amyflow/amy-hypernova",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "16",
+    "npm": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amy-Flow/amy-hypernova.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amy-Flow/amy-hypernova/issues"
+  },
+  "homepage": "https://github.com/Amy-Flow/amy-hypernova#readme"
+}
