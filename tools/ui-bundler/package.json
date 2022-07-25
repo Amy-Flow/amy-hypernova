@@ -1,0 +1,22 @@
+{
+  "name": "@amyflow/ui-bundler",
+  "version": "1.0.0",
+  "main": "ui-bundler.ts",
+  "license": "MIT",
+  "bin": {
+    "ui-bundler": "./dist/ui-bundler.js"
+  },
+  "scripts": {
+    "build": "swc ./ui-bundler.ts -d dist",
+    "build-types": "tsc -b ./tsconfig.json"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.218",
+    "@types/fs-extra": "^9.0.13",
+    "commander": "^9.4.0",
+    "fs-extra": "^10.1.0",
+    "typescript": "^4.7.4",
+    "util": "^0.12.4"
+  }
+}

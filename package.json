@@ -13,6 +13,9 @@
     "node": "16",
     "npm": "please-use-yarn"
   },
+  "scripts": {
+    "build": "turbo run build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Amy-Flow/amy-hypernova.git"
@@ -25,7 +28,8 @@
   },
   "homepage": "https://github.com/Amy-Flow/amy-hypernova#readme",
   "devDependencies": {
-    "turbo": "^1.3.4",
-    "@amyflow/prettier-config": "*"
+    "@amyflow/prettier-config": "*",
+    "@types/node": "^18.6.0",
+    "turbo": "^1.3.4"
   }
 }

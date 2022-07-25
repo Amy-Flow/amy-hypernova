@@ -4,12 +4,10 @@
   "main": "src/index.ts",
   "license": "MIT",
   "scripts": {
-    "build": "tsup src/index.ts --clean --sourcemap --format esm"
+    "build": "ui-bundler src -d dist --ignore '**/*.test.ts' --ignore '**/__mocks__/**'"
   },
   "dependencies": {
+    "@amyflow/ui-bundler": "*",
     "@mantine/hooks": "^4.2.12"
-  },
-  "devDependencies": {
-    "tsup": "^6.1.3"
   }
 }

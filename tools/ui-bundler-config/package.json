@@ -1,9 +1,0 @@
-{
-  "name": "@amyflow/ui-bundler-config",
-  "version": "1.0.0",
-  "main": "index.ts",
-  "license": "MIT",
-  "devDependencies": {
-    "tsup": "^6.1.3"
-  }
-}
