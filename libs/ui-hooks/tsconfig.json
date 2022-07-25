@@ -8,15 +8,14 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "noEmitOnError": true,
+    "noEmit": false,
     "allowJs": true,
     "rootDir": "src",
     "baseUrl": ".",
-    "outDir": "lib",
+    "outDir": "dist",
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "dist",
-    "composite": true
   },
   "include": [
     "src"

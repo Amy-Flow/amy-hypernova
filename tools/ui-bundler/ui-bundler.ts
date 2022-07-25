@@ -16,7 +16,7 @@ const tsconfigPath = path.join(packageRoot, 'tsconfig.json')
 
 const exec = promisify(childProcess.exec)
 
-;(async () => {
+const buildTypes = async () => {
   if (!fse.existsSync(tsconfigPath)) {
     throw new Error(
       'Unable to find a tsconfig to build this project. ' +
@@ -24,8 +24,10 @@ const exec = promisify(childProcess.exec)
         `The package root is '${packageRoot}'`,
     )
   }
-  await exec(['yarn', 'tsc', '-b', tsconfigPath].join(' '))
-})()
+  await exec(
+    ['yarn', 'tsc', '--declaration', '--emitDeclarationOnly', '--project', tsconfigPath].join(' '),
+  )
+}
 
 initProgram()
 const opts = parseArgs(process.argv)
@@ -36,7 +38,11 @@ process.on('uncaughtException', function (err) {
   process.exit(1)
 })
 
-fn(opts).catch((err: Error) => {
-  console.error(err)
-  process.exit(1)
-})
+fn(opts)
+  .then(async () => {
+    await buildTypes()
+  })
+  .catch((err: Error) => {
+    console.error(err)
+    process.exit(1)
+  })
