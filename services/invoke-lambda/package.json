@@ -1,0 +1,15 @@
+{
+  "name": "@amyflow/invoke-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "keywords": [],
+  "author": "Giorgi Kobulashvili",
+  "license": "ISC",
+  "dependencies": {
+    "@amyflow/lambda-core": "^1.0.0"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.1181.0"
+  }
+}

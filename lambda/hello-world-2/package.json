@@ -1,0 +1,12 @@
+{
+  "name": "@amyflow/hello-world-2",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "author": "Giorgi Kobulashvili",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "npm run build",
+    "build": "tsc index.ts --outDir dist --declaration"
+  }
+}
