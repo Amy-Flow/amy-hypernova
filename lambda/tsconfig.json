@@ -11,6 +11,7 @@
     "target": "es2019",
     "sourceMap": true,
     "baseUrl": "./",
+    "declarationDir": "dist",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

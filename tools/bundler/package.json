@@ -1,14 +1,15 @@
 {
-  "name": "@amyflow/ui-bundler",
+  "name": "@amyflow/bundler",
   "version": "1.0.0",
-  "main": "ui-bundler.ts",
+  "main": "bundler.ts",
   "license": "MIT",
   "bin": {
-    "ui-bundler": "./dist/ui-bundler.js"
+    "bundler": "./dist/bundler.js"
   },
   "scripts": {
-    "build": "swc ./ui-bundler.ts -d dist",
-    "build-types": "tsc -b ./tsconfig.json"
+    "build": "swc ./bundler.ts -d dist",
+    "build-types": "tsc -b ./tsconfig.json",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.57",

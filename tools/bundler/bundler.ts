@@ -24,9 +24,7 @@ const buildTypes = async () => {
         `The package root is '${packageRoot}'`,
     )
   }
-  await exec(
-    ['yarn', 'tsc', '--declaration', '--emitDeclarationOnly', '--project', tsconfigPath].join(' '),
-  )
+  await exec(['yarn', 'tsc', '--declaration', '--emitDeclarationOnly'].join(' '))
 }
 
 initProgram()

@@ -16,7 +16,8 @@
     "npm": "please-use-yarn"
   },
   "scripts": {
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "clean": "turbo run clean"
   },
   "repository": {
     "type": "git",

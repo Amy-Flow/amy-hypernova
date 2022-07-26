@@ -1,2 +1,4 @@
 # TODO
-[ g] # Add TRPC  logic
+[ ] # Add TRPC  logic
+[ ] # Add Json Web Token
+[ ] # Fix Build with TSC with tsconfig

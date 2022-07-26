@@ -7,6 +7,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "postinstall": "npm run build",
-    "build": "tsc index.ts --outDir dist --declaration"
+    "build": "tsc index.ts --outDir dist --declaration",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@amyflow/bundler": "*"
   }
 }

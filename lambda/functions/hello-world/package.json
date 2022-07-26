@@ -7,6 +7,10 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "npm run build",
-    "build": "tsc index.ts --outDir dist --declaration"
+    "build": "bundler hello-world.lambda.ts",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@amyflow/bundler": "*"
   }
 }
