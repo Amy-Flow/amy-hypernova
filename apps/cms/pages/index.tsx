@@ -3,7 +3,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-const Home: NextPage = () => {
+const Home: NextPage = ({ data }: any) => {
+  console.log(data)
   return (
     <div className={styles.container}>
       <Head>
@@ -14,12 +15,13 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
+          Response From Lambda: {data}
+          <br />
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.tsx</code>
+          Get started by editing <code className={styles.code}>pages/index.tsx</code>
         </p>
 
         <div className={styles.grid}>
@@ -33,22 +35,16 @@ const Home: NextPage = () => {
             <p>Learn about Next.js in an interactive course with quizzes!</p>
           </a>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
+          <a href="https://github.com/vercel/next.js/tree/canary/examples" className={styles.card}>
             <h2>Examples &rarr;</h2>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
           </a>
 
           <a
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
+            className={styles.card}>
             <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
+            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
           </a>
         </div>
       </main>
@@ -57,8 +53,7 @@ const Home: NextPage = () => {
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Powered by{' '}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
@@ -67,6 +62,17 @@ const Home: NextPage = () => {
       </footer>
     </div>
   )
+}
+
+// getServerSideProps is a Next.js specific method that is used to fetch data from the server.
+
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const res = await fetch('http://localhost:3000/api/hello')
+  const { data } = await res.json()
+
+  // Pass data to the page via props
+  return { props: { data } }
 }
 
 export default Home

@@ -1,7 +1,0 @@
-{
-  "name": "@amyflow/lambda-core",
-  "version": "1.0.0",
-  "main": "lambda.ts",
-  "author": "Giorgi Kobulashvili",
-  "license": "MIT"
-}

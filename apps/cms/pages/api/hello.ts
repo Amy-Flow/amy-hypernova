@@ -1,13 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
+import { invokeLambda, LambdaFunctions, LambdaResponse } from '@amyflow/invoke-lambda'
 
-type Data = {
-  name: string
-}
-
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<LambdaResponse<typeof LambdaFunctions.helloWorld>>,
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  const { data } = await invokeLambda(LambdaFunctions.helloWorld, { name: 'Next.js' })
+  res.status(200).json({ data })
 }
