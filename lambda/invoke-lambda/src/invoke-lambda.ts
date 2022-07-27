@@ -6,7 +6,7 @@ type Arguments<T extends (args: any) => any> = T extends (args: infer P) => any 
 // This is a minimal type of functionsList
 // then we get K the K = with the functionNames
 const makeInvokeLambda = <T extends { [key: string]: (args: any) => any }>(functions: T) => {
-  const invokeLambda2 = async <K extends keyof T>(
+  const invokeLambda = async <K extends keyof T>(
     functionName: K,
     payload: Arguments<T[K]>,
   ): Promise<ReturnType<T[K]>> => {
@@ -14,7 +14,7 @@ const makeInvokeLambda = <T extends { [key: string]: (args: any) => any }>(funct
     return func(payload)
   }
 
-  return invokeLambda2
+  return invokeLambda
 }
 
 const invokeLambda = makeInvokeLambda(functionsList)
